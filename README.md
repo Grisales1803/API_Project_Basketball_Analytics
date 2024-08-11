@@ -1,4 +1,4 @@
-<img src="https://img.freepik.com/free-photo/basketball-game-concept_23-2150910694.jpg" alt="Decorative Image Header" style="width: 100%; height: 450px; object-fit: cover;">
+<img src="https://img.freepik.com/free-photo/basketball-game-concept_23-2150910694.jpg" alt="Decorative Image Header" style="width: 100%; height: 350px; object-fit: cover;">
 
 
 # <p align="center"> NBA Information Web Application </p>
