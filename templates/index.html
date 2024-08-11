@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>NBA Information</title>
+
+    <!-- CSS styles for the webpage -->
+    <style>
+        /* General body styles */
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set font for the page */
+            background-image: url('https://wallpapers.com/images/hd/hd-basketball-ball-in-black-l8ajb0eng0kjhreg.jpg'); /* Background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            color: #fff; /* Set text color to white */
+        }
+
+        /* Container for centering content */
+        .container {
+            display: flex; /* Use flexbox layout */
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            text-align: center; /* Center text */
+            padding: 20px; /* Add padding */
+        }
+
+        /* Overlay to create a semi-transparent background */
+        .overlay {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px; /* Add padding inside the overlay */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 800px; /* Maximum width of overlay */
+            margin: 0 auto; /* Center overlay horizontally */
+        }
+
+        /* Styles for the main heading */
+        h1 {
+            margin: 0; /* Remove default margin */
+            font-size: 2.5rem; /* Set font size */
+            color: #333; /* Dark gray color for text */
+        }
+
+        /* Styles for paragraph text */
+        p {
+            font-size: 1.2rem; /* Set font size */
+            color: #333; /* Dark gray color for text */
+        }
+
+        /* Container for buttons */
+        .button-container {
+            margin-top: 20px; /* Add space above the button container */
+        }
+
+        /* Styles for buttons */
+        .button {
+            display: inline-block; /* Display buttons inline */
+            background: #ff6f00; /* Orange background color */
+            color: #fff; /* White text color */
+            padding: 15px 25px; /* Add padding inside the button */
+            margin: 10px; /* Add space around the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* Remove underline from links */
+            font-size: 1.1rem; /* Set font size */
+            transition: background 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+        }
+
+        /* Styles for button hover effect */
+        .button:hover {
+            background: #e65100; /* Darker orange on hover */
+            transform: scale(1.05); /* Slightly increase size on hover */
+        }
+
+        /* Styles for images inside buttons */
+        .button img {
+            vertical-align: middle; /* Align image vertically */
+            width: 24px; /* Set image width */
+            height: 24px; /* Set image height */
+            margin-right: 10px; /* Add space to the right of the image */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Main container for the content -->
+    <div class="container">
+        <!-- Overlay to create a content background -->
+        <div class="overlay">
+            <!-- Main heading -->
+            <h1>NBA Information</h1>
+            <!-- Welcome paragraph -->
+            <p>Welcome to the NBA Information page. Here you can query information about NBA teams and players.</p>
+            <!-- Button container -->
+            <div class="button-container">
+                <!-- Link to the teams page with a button style -->
+                <a href="/teams" class="button">
+                    <!-- Icon for Teams button -->
+                    <img src="https://cdn2.iconfinder.com/data/icons/basketball-elements-1/64/Team-human-man-sport-basketball-512.png" alt="Teams"> Teams
+                </a>
+                <!-- Link to the players page with a button style -->
+                <a href="/players" class="button">
+                    <!-- Icon for Players button -->
+                    <img src="https://images.vexels.com/media/users/3/129334/isolated/preview/5e167ebc8f4491a5b2b123c57218c034-basketball-player-circle-icon.png?w=360" alt="Players"> Players
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

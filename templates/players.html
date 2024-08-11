@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Players</title>
+    <!-- Internal CSS for styling the page -->
+    <style>
+        body {
+            background-image: url('https://wallpapers.com/images/hd/hd-basketball-ball-in-black-l8ajb0eng0kjhreg.jpg'); /* Background image for the body */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            color: black; /* Text color */
+            font-family: Arial, sans-serif; /* Font family */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Translucent white background for container */
+            padding: 20px; /* Padding inside container */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 800px; /* Maximum width */
+            margin: 0 auto; /* Center align */
+        }
+        h1, h2, h3 {
+            text-align: center; /* Center align headings */
+        }
+        .info-text {
+            text-align: center; /* Center align text */
+            font-size: 1.2rem; /* Larger font size */
+            margin: 10px 0; /* Margin */
+        }
+        .comparison-section {
+            display: flex; /* Flexbox for comparison section */
+            justify-content: space-between; /* Space between items */
+        }
+        .player-table {
+            width: 45%; /* Width of each player table */
+            background-color: white; /* White background */
+            padding: 10px; /* Padding */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+        .comparison-results {
+            text-align: center; /* Center align text */
+            background-color: white; /* White background */
+            padding: 20px; /* Padding */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            margin-top: 20px; /* Margin */
+            max-width: 600px; /* Maximum width */
+            margin-left: auto; /* Center align */
+            margin-right: auto; /* Center align */
+        }
+        .button-container {
+            text-align: center; /* Center align button container */
+            margin-top: 20px; /* Margin */
+        }
+        .button {
+            display: inline-block; /* Inline block for buttons */
+            background: #ff6f00; /* Button background color */
+            color: #fff; /* Button text color */
+            padding: 15px 25px; /* Padding */
+            margin: 10px; /* Margin */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* No text decoration */
+            font-size: 1.1rem; /* Font size */
+            transition: background 0.3s, transform 0.3s; /* Transition effects */
+        }
+        .button:hover {
+            background: #e65100; /* Hover background color */
+            transform: scale(1.05); /* Scale on hover */
+        }
+        .button img {
+            vertical-align: middle; /* Align image vertically */
+            width: 24px; /* Image width */
+            height: 24px; /* Image height */
+            margin-right: 10px; /* Margin */
+        }
+        th, td {
+            padding: 8px; /* Padding */
+            text-align: left; /* Text align left */
+            border-bottom: 1px solid #ddd; /* Border bottom */
+        }
+        th {
+            text-align: center; /* Center align text in header cells */
+        }
+        .histogram {
+            background-color: rgba(255, 255, 255, 0.8); /* Translucent white background */
+            padding: 20px; /* Padding */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 800px; /* Maximum width */
+            margin: 20px auto; /* Margin */
+            text-align: center; /* Center align text */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+        .histogram img {
+            max-width: 100%; /* Ensure the image is responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Page title -->
+        <h1>NBA Players</h1>
+        <!-- Informative text -->
+         <p class="info-text">This page is only working with a sample of 100 NBA players.</p>
+        <!-- Section for player comparison -->
+        <div class="comparison-section">
+            <!-- Player 1 table -->
+            <div class="player-table">
+                <h3>Player 1</h3>
+                <!-- Dropdown to select player 1 -->
+                <select id="player1-select">
+                    <option value="" disabled selected>Select a player</option>
+                    {% for player in players %}
+                        <option value="{{ player.id }}">{{ player.first_name }} {{ player.last_name }}</option>
+                    {% endfor %}
+                </select>
+                <!-- Table to display player 1 information -->
+                <table id="player1-info">
+                    <tr><th>Id</th><td></td></tr>
+                    <tr><th>First Name</th><td></td></tr>
+                    <tr><th>Last Name</th><td></td></tr>
+                    <tr><th>Position</th><td></td></tr>
+                    <tr><th>Height (ft-in)</th><td></td></tr>
+                    <tr><th>Weight (lbs)</th><td></td></tr>
+                    <tr><th>Jersey Number</th><td></td></tr>
+                    <tr><th>College</th><td></td></tr>
+                    <tr><th>Country</th><td></td></tr>
+                    <tr><th>Team</th><td></td></tr>
+                </table>
+            </div>
+            <!-- Player 2 table -->
+            <div class="player-table">
+                <h3>Player 2</h3>
+                <!-- Dropdown to select player 2 -->
+                <select id="player2-select">
+                    <option value="" disabled selected>Select a player</option>
+                    {% for player in players %}
+                        <option value="{{ player.id }}">{{ player.first_name }} {{ player.last_name }}</option>
+                    {% endfor %}
+                </select>
+                <!-- Table to display player 2 information -->
+                <table id="player2-info">
+                    <tr><th>Id</th><td></td></tr>
+                    <tr><th>First Name</th><td></td></tr>
+                    <tr><th>Last Name</th><td></td></tr>
+                    <tr><th>Position</th><td></td></tr>
+                    <tr><th>Height (ft-in)</th><td></td></tr>
+                    <tr><th>Weight (lbs)</th><td></td></tr>
+                    <tr><th>Jersey Number</th><td></td></tr>
+                    <tr><th>College</th><td></td></tr>
+                    <tr><th>Country</th><td></td></tr>
+                    <tr><th>Team</th><td></td></tr>
+                </table>
+            </div>
+        </div>
+        <!-- Comparison results section -->
+        <div class="comparison-results">
+            <h2>Comparison Results</h2>
+            <!-- Table to display comparison results -->
+            <table id="comparison-info" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Player 1</th>
+                    <th>Player 2</th>
+                    <th>Difference (P1-P2)</th>
+                </tr>
+                <tr>
+                    <td>Height (in)</td>
+                    <td id="player1-height"></td>
+                    <td id="player2-height"></td>
+                    <td id="height-diff"></td>
+                </tr>
+                <tr>
+                    <td>Weight (lbs)</td>
+                    <td id="player1-weight"></td>
+                    <td id="player2-weight"></td>
+                    <td id="weight-diff"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Height histogram section -->
+        <div class="histogram">
+            <h2>Height Distribution</h2>
+            <img src="/static/height_histogram.png" alt="Height Histogram" style="max-width: 100%; height: auto;">
+            <!-- Table to display height statistics -->
+            <table>
+                <tr>
+                    <th>Measure</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Mean Height (in)</td>
+                    <td>{{ height_mean }}</td>
+                </tr>
+                <tr>
+                    <td>Median Height (in)</td>
+                    <td>{{ height_median }}</td>
+                </tr>
+                <tr>
+                    <td>Mode Height (in)</td>
+                    <td>{{ height_mode }}</td>
+                </tr>
+                <tr>
+                    <td>Normality Test for Height</td>
+                    <td>{{ height_normality_message }}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Weight histogram section -->
+        <div class="histogram">
+            <h2>Weight Distribution</h2>
+            <img src="/static/weight_histogram.png" alt="Weight Histogram">
+            <!-- Table to display weight statistics -->
+            <table>
+                <tr>
+                    <th>Measure</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Mean Weight (lbs)</td>
+                    <td>{{ weight_mean }}</td>
+                </tr>
+                <tr>
+                    <td>Median Weight (lbs)</td>
+                    <td>{{ weight_median }}</td>
+                </tr>
+                <tr>
+                    <td>Mode Weight (lbs)</td>
+                    <td>{{ weight_mode }}</td>
+                </tr>
+                <tr>
+                    <td>Normality Test for Weight</td>
+                    <td>{{ weight_normality_message }}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Container for navigation buttons -->
+        <div class="button-container">
+            <!-- Home button that navigates to the home page -->
+            <a href="/" class="button"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"> Home</a>
+            <!-- Teams button that navigates to the teams page -->
+            <a href="/teams" class="button"><img src="https://cdn2.iconfinder.com/data/icons/basketball-elements-1/64/Team-human-man-sport-basketball-512.png" alt="Teams"> Teams</a>
+        </div>
+    </div>
+    <!-- JavaScript to handle player comparison and data fetching -->
+    <script>
+        // Add event listener to the first player dropdown menu
+        document.getElementById('player1-select').addEventListener('change', function() {
+            // Fetch and display information for the selected player
+            fetchPlayerInfo(this.value, 'player1-info', 'player1-height', 'player1-weight');
+        });
+        // Add event listener to the second player dropdown menu
+        document.getElementById('player2-select').addEventListener('change', function() {
+            // Fetch and display information for the selected player
+            fetchPlayerInfo(this.value, 'player2-info', 'player2-height', 'player2-weight');
+        });
+        // Function to fetch player information from the server
+        function fetchPlayerInfo(playerId, tableId, heightId, weightId) {
+            fetch(`/player_info/${playerId}`) // Make a request to get player data
+                .then(response => response.json()) // Convert response to JSON
+                .then(data => {
+                    // Reference the table and update it with player information
+                    const table = document.getElementById(tableId);
+                    table.rows[0].cells[1].textContent = data.id;
+                    table.rows[1].cells[1].textContent = data.first_name;
+                    table.rows[2].cells[1].textContent = data.last_name;
+                    table.rows[3].cells[1].textContent = data.position;
+                    table.rows[4].cells[1].textContent = data.height;
+                    table.rows[5].cells[1].textContent = data.weight;
+                    table.rows[6].cells[1].textContent = data.jersey_number;
+                    table.rows[7].cells[1].textContent = data.college;
+                    table.rows[8].cells[1].textContent = data.country;
+                    table.rows[9].cells[1].textContent = data.team.full_name;
+
+                    // Update height and weight in the comparison table
+                    document.getElementById(heightId).textContent = data.height;
+                    document.getElementById(weightId).textContent = data.weight;
+
+                    // Calculate and update the differences between the two players
+                    updateComparison();
+                })
+                .catch(error => console.error('Error fetching player data:', error));
+        }
+
+        // Function to calculate and display the differences between two players
+        function updateComparison() {
+            // Get height and weight values for both players
+            const player1Height = document.getElementById('player1-height').textContent;
+            const player2Height = document.getElementById('player2-height').textContent;
+            const player1Weight = document.getElementById('player1-weight').textContent;
+            const player2Weight = document.getElementById('player2-weight').textContent;
+
+            // Calculate differences in height and weight
+            const heightDiff = heightDifference(player1Height, player2Height);
+            const weightDiff = weightDifference(player1Weight, player2Weight);
+
+            // Display the calculated differences
+            document.getElementById('height-diff').textContent = heightDiff;
+            document.getElementById('weight-diff').textContent = weightDiff;
+        }
+
+        // Function to calculate the difference in height between two players
+        function heightDifference(height1, height2) {
+            // Split height values into feet and inches
+            const [feet1, inches1] = height1.split('-').map(Number);
+            const [feet2, inches2] = height2.split('-').map(Number);
+
+            // Convert height to total inches
+            const totalInches1 = feet1 * 12 + inches1;
+            const totalInches2 = feet2 * 12 + inches2;
+            // Return the difference in inches
+            return (totalInches1 - totalInches2);
+                }
+
+        // Function to calculate the difference in weight between two players
+        function weightDifference(weight1, weight2) {
+            // Convert weight strings to integers and return the difference
+            return (parseInt(weight1, 10) - parseInt(weight2, 10));
+                }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Teams</title>
+    <style>
+        /* Style for the body with background image, cover size, center position, font, and text color */
+        body {
+            background-image: url('https://wallpapers.com/images/hd/hd-basketball-ball-in-black-l8ajb0eng0kjhreg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        /* Style for the main container with semi-transparent background, padding, border-radius, and centered alignment */
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Center align the main heading */
+        h1 {
+            text-align: center;
+        }
+        /* Center align the secondary heading */
+        h2 {
+            text-align: center;
+        }
+        /* Center align images */
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        /* Style for the button container with center alignment and top margin */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* Style for buttons with background color, text color, padding, margin, border radius, no text decoration, font size, and transition effects */
+        .button {
+            display: inline-block;
+            background: #ff6f00;
+            color: #fff;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        /* Hover effect for buttons with darker background and slight scale transformation */
+        .button:hover {
+            background: #e65100;
+            transform: scale(1.05);
+        }
+        /* Style for the images inside the buttons with vertical alignment, size, and right margin */
+        .button img {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        /* Style for tables with full width, border collapse, and top margin */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        /* Style for table headers and cells with border, padding, and center alignment for headers */
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #ff6f00;
+            color: white;
+            text-align: center;
+        }
+        /* Style for table cells with background color and left alignment */
+        td {
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for the content -->
+    <div class="container">
+        <!-- Main heading for the page -->
+        <h1>NBA Teams</h1>
+        <!-- Secondary heading for the teams information section -->
+        <h2>Teams Information</h2>
+        <!-- Table for displaying team information -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Abbreviation</th>
+                    <th>Full Name</th>
+                    <th>City</th>
+                    <th>Conference</th>
+                    <th>Division</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the 'teams' variable and display each team's data in a table row -->
+                {% for team in teams %}
+                <tr>
+                    <td>{{ team.abbreviation }}</td>
+                    <td>{{ team.full_name }}</td>
+                    <td>{{ team.city }}</td>
+                    <td>{{ team.conference }}</td>
+                    <td>{{ team.division }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Secondary heading for the conference chart section -->
+        <h2>Number of Teams in Each Conference</h2>
+        <!-- Display the conference chart image -->
+        <img src="static/conference_teams.png" alt="Conference Chart">
+        <!-- Container for the navigation buttons -->
+        <div class="button-container">
+            <!-- Button to navigate to the home page with an icon -->
+            <a href="/" class="button"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"> Home</a>
+            <!-- Button to navigate to the players page with an icon -->
+            <a href="/players" class="button"><img src="https://images.vexels.com/media/users/3/129334/isolated/preview/5e167ebc8f4491a5b2b123c57218c034-basketball-player-circle-icon.png?w=360" alt="Players"> Players</a>
+        </div>
+    </div>
+</body>
+</html>
