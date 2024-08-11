@@ -11,7 +11,7 @@ Welcome to the NBA Information Web Application! This project provides an interac
 
 The data for this application is sourced from a series of APIs that provide detailed information about NBA players and teams. The flow of data is as follows:
 
-1. **Data Retrieval**: The application fetches player data through API endpoints. These endpoints return JSON objects containing player attributes such as height, weight, and team information.
+1. **Data Retrieval**: The application fetches player data through API endpoints. These endpoints return JSON objects containing player attributes such as height, weight, and team information. See [Ball Don't lie API](https://www.balldontlie.io/#introduction)
 2. **Data Integration**: The retrieved data is then parsed and integrated into the webpage. JavaScript functions handle dynamic data fetching and updating the HTML content based on user selections.
 3. **Comparison & Analysis**: Users can select two players to compare their attributes. The application calculates and displays differences in height and weight. Additionally, statistical distributions for player heights and weights are visualized using histograms.
 
